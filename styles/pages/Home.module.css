@@ -1,0 +1,9 @@
+.Title {
+  font-size: 4.7rem;
+}
+
+.Slogan {
+  max-width: 20ch;
+  text-align: center;
+  font-family: var(--deco);
+}

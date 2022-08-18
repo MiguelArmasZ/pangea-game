@@ -14,6 +14,7 @@ body {
   font-size: 1.8rem;
   line-height: 1.6;
   font-family: var(--base);
+  background: linear-gradient(45deg, var(--white), var(--gray));
 }
 
 *::first-letter {
