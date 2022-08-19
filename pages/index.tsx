@@ -1,6 +1,6 @@
 import { HomeLayout } from '../components/layouts'
 import { Developed, Keypad, Paragraph, Title } from '../components/ui'
-import { modality } from '../data'
+import { modalityConfig } from '../data'
 import css from '../styles/pages/Home.module.css'
 
 const HomePage = () => {
@@ -11,7 +11,7 @@ const HomePage = () => {
         aprende geografía mientras te diviertes
       </Paragraph>
       <Paragraph>elíge una modalidad</Paragraph>
-      <Keypad buttons={modality} />
+      <Keypad buttons={modalityConfig} />
       <Developed />
     </HomeLayout>
   )

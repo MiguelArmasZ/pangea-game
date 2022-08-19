@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react'
-import { ConfigGame } from '../interfaces'
+import { ConfigGame, Country } from '../interfaces'
 import { MainContext, CONFIG_GAME_INITIAL_STATE } from './'
 
 interface Props {
@@ -10,12 +10,16 @@ export const MainProvider = ({ children }: Props) => {
   const [configGame, setConfigGame] = useState<ConfigGame>(
     CONFIG_GAME_INITIAL_STATE
   )
+  const [round, setRound] = useState<Country[]>([])
 
   return (
     <MainContext.Provider
       value={{
         configGame,
-        setConfigGame
+        setConfigGame,
+
+        round,
+        setRound
       }}
     >
       {children}

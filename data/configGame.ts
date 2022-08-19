@@ -1,6 +1,6 @@
 import { ConfigGameBtn } from '../interfaces'
 
-export const modality: ConfigGameBtn[] = [
+export const modalityConfig: ConfigGameBtn[] = [
   {
     href: '/questions',
     text: 'capitales',
@@ -13,7 +13,7 @@ export const modality: ConfigGameBtn[] = [
   }
 ]
 
-export const numberQuestions: ConfigGameBtn[] = [
+export const numberQuestionsConfig: ConfigGameBtn[] = [
   {
     href: '/play',
     text: 10,

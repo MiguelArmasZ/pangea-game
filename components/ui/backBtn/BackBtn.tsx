@@ -12,6 +12,7 @@ export const BackBtn = () => {
         width={25}
         height={25}
         alt='volver atrás'
+        priority
       />
     </button>
   )
