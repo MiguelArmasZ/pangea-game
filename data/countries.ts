@@ -1,4 +1,6 @@
-export const countries = [
+import { Country } from '../interfaces'
+
+export const countries: Country[] = [
   { name: 'afganistán', capital: 'kabul', flag: 'afganistan' },
   { name: 'albania', capital: 'tirana', flag: 'albania' },
   { name: 'alemania', capital: 'berlín', flag: 'alemania' },

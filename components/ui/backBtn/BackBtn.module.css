@@ -1,0 +1,22 @@
+.BackBtn {
+  background: var(--degrade-black);
+  padding: var(--space-1);
+  border: none;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  box-shadow: var(--shadow-l);
+  width: 6rem;
+  height: 6rem;
+  transition: transform 0.5s ease;
+}
+
+@media (min-width: 900px) {
+  .BackBtn:hover {
+    transform: translateY(-10%);
+  }
+}

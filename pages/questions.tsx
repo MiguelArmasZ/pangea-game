@@ -1,5 +1,5 @@
 import { PlayLayout } from '../components/layouts'
-import { Keypad, Paragraph } from '../components/ui'
+import { BackBtn, Keypad, Paragraph } from '../components/ui'
 import { numberQuestions } from '../data'
 
 const QuestionsPage = () => {
@@ -7,6 +7,7 @@ const QuestionsPage = () => {
     <PlayLayout>
       <Paragraph>elíge el número de preguntas</Paragraph>
       <Keypad buttons={numberQuestions} />
+      <BackBtn />
     </PlayLayout>
   )
 }

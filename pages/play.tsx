@@ -1,9 +1,17 @@
-const play = () => {
+import { PlayLayout } from '../components/layouts'
+import { Button } from '../components/ui'
+
+const PlayPage = () => {
   return (
-    <div>
-      <h1>hola desde play</h1>
-    </div>
+    <PlayLayout>
+      <div>
+        <Button>madrid</Button>
+        <Button>parís</Button>
+        <Button>roma</Button>
+        <Button>berlín</Button>
+      </div>
+    </PlayLayout>
   )
 }
 
-export default play
+export default PlayPage

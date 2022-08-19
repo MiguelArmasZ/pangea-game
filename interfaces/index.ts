@@ -12,3 +12,9 @@ export interface ConfigGameBtn {
   text: Modality | NumberQuestions
   optionConfig: OptionsConfig
 }
+
+export interface Country {
+  name: string
+  capital: string
+  flag: string
+}
