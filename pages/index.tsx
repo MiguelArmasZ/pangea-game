@@ -7,9 +7,17 @@ import {
   Paragraph,
   Title
 } from '../components/ui'
+import { useMainContext } from '../hooks'
+import { Modality } from '../interfaces'
 import css from '../styles/pages/Home.module.css'
 
 const HomePage = () => {
+  const { configGame, setConfigGame } = useMainContext()
+
+  function handleModality(modality: Modality) {
+    setConfigGame({ ...configGame, modality })
+  }
+
   return (
     <HomeLayout>
       <Title sx={css.Title} />
@@ -20,12 +28,12 @@ const HomePage = () => {
 
       <Keypad>
         <NextLink href='/questions' passHref>
-          <a>
+          <a onClick={() => handleModality('capitals')}>
             <Button>capitales</Button>
           </a>
         </NextLink>
         <NextLink href='/questions' passHref>
-          <a>
+          <a onClick={() => handleModality('flags')}>
             <Button>banderas</Button>
           </a>
         </NextLink>
