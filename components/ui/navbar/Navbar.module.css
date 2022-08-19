@@ -1,0 +1,23 @@
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: var(--shadow-l);
+  padding: var(--space-1);
+  width: 100%;
+  background-color: var(--light);
+}
+
+@media (min-width: 900px) {
+  .Wrap {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+}
+
+.Title {
+  font-size: 2rem;
+  width: fit-content;
+}

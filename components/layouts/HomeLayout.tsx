@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const HomeLayout = ({ children }: Props) => {
-  return <main className='content'>{children}</main>
+  return <main className='content fade'>{children}</main>
 }

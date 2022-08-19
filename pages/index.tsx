@@ -1,5 +1,4 @@
 import NextLink from 'next/link'
-
 import { HomeLayout } from '../components/layouts'
 import {
   Button,
