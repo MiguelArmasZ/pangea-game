@@ -5,12 +5,11 @@
   min-width: 25rem;
   border-radius: var(--radius-l);
   text-transform: uppercase;
-  transition: transform 0.5s ease, background-color 0.3s ease,
-    color 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
-.Button:hover {
-  /* transform: scale(1.05); */
-  background-color: var(--dark);
-  color: var(--white);
+@media (min-width: 900px) {
+  .Button:hover {
+    transform: scale(1.05);
+  }
 }

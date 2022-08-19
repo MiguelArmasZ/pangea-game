@@ -33,6 +33,17 @@
   --shadow: 0 0 0.5rem var(--overcast);
   --shadow-m: 0 0 1rem var(--overcast);
   --shadow-l: 0 0 7rem var(--overcast);
+
+  --degrade-main: linear-gradient(
+    45deg,
+    var(--primary),
+    var(--secondary)
+  );
+  --degrade-black: linear-gradient(
+    45deg,
+    var(--black),
+    var(--overcast)
+  );
 }
 
 /* 

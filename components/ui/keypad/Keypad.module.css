@@ -5,3 +5,8 @@
   align-items: center;
   gap: var(--space-2);
 }
+
+.ActiveBtn {
+  background: var(--degrade-main);
+  color: var(--white);
+}

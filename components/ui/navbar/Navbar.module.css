@@ -6,18 +6,35 @@
   padding: var(--space-1);
   width: 100%;
   background-color: var(--light);
+  overflow: hidden;
 }
 
-@media (min-width: 900px) {
-  .Wrap {
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-  }
+.Wrap {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .Title {
   font-size: 2rem;
   width: fit-content;
+}
+
+.Modality {
+  position: relative;
+  font-family: var(--deco);
+  color: var(--white);
+}
+
+.Modality::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--degrade-black);
+  z-index: -1;
+  transform: skew(-45deg) scale(2);
 }

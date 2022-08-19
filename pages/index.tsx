@@ -11,9 +11,7 @@ const HomePage = () => {
         aprende geografía mientras te diviertes
       </Paragraph>
       <Paragraph>elíge una modalidad</Paragraph>
-
       <Keypad buttons={modality} />
-
       <Developed />
     </HomeLayout>
   )

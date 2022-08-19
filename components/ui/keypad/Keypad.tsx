@@ -10,13 +10,29 @@ interface Props {
 }
 
 export const Keypad = ({ sx = '', buttons }: Props) => {
-  const handleConfigGame = useConfigGame()
+  const { configGame, handleConfigGame, isActive, setActiveBtn } =
+    useConfigGame()
+
   return (
     <div className={`${css.Keypad} ${sx}`}>
-      {buttons.map(({ href, text, optionConfig }) => (
+      {buttons.map(({ href, text, optionConfig }, index) => (
         <NextLink key={text} href={href} passHref>
-          <a onClick={() => handleConfigGame(optionConfig, text)}>
-            <Button>{text}</Button>
+          <a
+            onClick={() => {
+              handleConfigGame(optionConfig, text)
+              setActiveBtn(index)
+            }}
+          >
+            <Button
+              sx={
+                isActive === index ||
+                configGame[optionConfig] === text
+                  ? css.ActiveBtn
+                  : ''
+              }
+            >
+              {text}
+            </Button>
           </a>
         </NextLink>
       ))}
