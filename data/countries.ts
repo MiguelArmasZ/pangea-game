@@ -34,7 +34,6 @@ export const countries: Country[] = [
   { name: 'brasil', capital: 'brasilia', flag: 'brasil' },
   { name: 'bulgaria', capital: 'sofía', flag: 'bulgaria' },
   { name: 'burundi', capital: 'gitega', flag: 'burundi' },
-
   { name: 'bután', capital: 'timbu', flag: 'butan' },
   { name: 'cabo verde', capital: 'praia', flag: 'cabo-verde' },
   { name: 'camerún', capital: 'yaundé', flag: 'camerun' },
