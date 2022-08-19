@@ -1,7 +1,7 @@
 import css from './Button.module.css'
 
 interface Props {
-  children: string
+  children: string | number
   sx?: string
 }
 

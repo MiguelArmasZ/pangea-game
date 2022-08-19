@@ -1,22 +1,16 @@
-import NextLink from 'next/link'
 import { HomeLayout } from '../components/layouts'
-import {
-  Button,
-  Developed,
-  Keypad,
-  Paragraph,
-  Title
-} from '../components/ui'
-import { useMainContext } from '../hooks'
-import { Modality } from '../interfaces'
+import { Developed, Keypad, Paragraph, Title } from '../components/ui'
+import { modality } from '../data'
+// import { useMainContext } from '../hooks'
+// import { Modality } from '../interfaces'
 import css from '../styles/pages/Home.module.css'
 
 const HomePage = () => {
-  const { configGame, setConfigGame } = useMainContext()
+  // const { configGame, setConfigGame } = useMainContext()
 
-  function handleModality(modality: Modality) {
-    setConfigGame({ ...configGame, modality })
-  }
+  // function handleModality(modality: Modality) {
+  //   setConfigGame({ ...configGame, modality })
+  // }
 
   return (
     <HomeLayout>
@@ -26,18 +20,7 @@ const HomePage = () => {
       </Paragraph>
       <Paragraph>elíge una modalidad</Paragraph>
 
-      <Keypad>
-        <NextLink href='/questions' passHref>
-          <a onClick={() => handleModality('capitals')}>
-            <Button>capitales</Button>
-          </a>
-        </NextLink>
-        <NextLink href='/questions' passHref>
-          <a onClick={() => handleModality('flags')}>
-            <Button>banderas</Button>
-          </a>
-        </NextLink>
-      </Keypad>
+      <Keypad buttons={modality} />
 
       <Developed />
     </HomeLayout>
