@@ -8,7 +8,7 @@ import { NumberQuestions } from '../interfaces'
 const QuestionsPage = () => {
   const { configGame, setConfigGame } = useMainContext()
 
-  function handleModality(numberQuestions: NumberQuestions) {
+  function handleNumberQuestions(numberQuestions: NumberQuestions) {
     setConfigGame({ ...configGame, numberQuestions })
   }
 
@@ -16,12 +16,12 @@ const QuestionsPage = () => {
     <PlayLayout>
       <Keypad>
         <NextLink href='/questions' passHref>
-          <a onClick={() => handleModality(10)}>
+          <a onClick={() => handleNumberQuestions(10)}>
             <Button>10</Button>
           </a>
         </NextLink>
         <NextLink href='/questions' passHref>
-          <a onClick={() => handleModality(20)}>
+          <a onClick={() => handleNumberQuestions(20)}>
             <Button>20</Button>
           </a>
         </NextLink>
