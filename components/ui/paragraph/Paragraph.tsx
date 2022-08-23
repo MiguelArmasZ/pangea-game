@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import css from './Paragraph.module.css'
 
 interface Props {
   children: ReactNode
@@ -6,5 +7,5 @@ interface Props {
 }
 
 export const Paragraph = ({ children, sx = '' }: Props) => {
-  return <p className={sx}>{children}</p>
+  return <p className={`${css.Paragraph} ${sx}`}>{children}</p>
 }

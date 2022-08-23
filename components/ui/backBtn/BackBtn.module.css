@@ -8,10 +8,10 @@
   justify-content: center;
   position: absolute;
   right: 0;
-  bottom: 5%;
+  bottom: 2%;
   box-shadow: var(--shadow-l);
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   transition: transform 0.5s ease;
 }
 

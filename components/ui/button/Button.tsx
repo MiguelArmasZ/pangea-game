@@ -1,8 +1,8 @@
-import { MouseEventHandler } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 import css from './Button.module.css'
 
 interface Props {
-  children: string | number
+  children: ReactNode
   sx?: string
   lineStyle?: object
   name?: string

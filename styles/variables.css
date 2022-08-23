@@ -14,8 +14,10 @@
   --light: #eee;
   --white: #fff;
 
-  --primary: #d04d0b;
+  --primary: #ff6900;
   --secondary: #15d;
+  --success: #125b50;
+  --error: #990000;
 
   --radius: 0.5rem;
   --radius-m: 1rem;

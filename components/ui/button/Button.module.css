@@ -3,6 +3,7 @@
   border: 2px solid var(--gray);
   padding: var(--space-1) var(--space-3);
   min-width: 25rem;
+  width: 100%;
   border-radius: var(--radius-l);
   text-transform: uppercase;
   transition: transform 0.5s ease;

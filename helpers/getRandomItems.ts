@@ -18,7 +18,7 @@ export function getRandomCountries(
 ) {
   const randomNumbers = generateRandomNumbers(
     countries.length - 1,
-    quantity
+    quantity + 1
   )
   return randomNumbers.map((number) => countries[number])
 }

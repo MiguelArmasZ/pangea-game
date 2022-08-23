@@ -10,5 +10,7 @@ export function getNotSelected(selected: Country[]) {
     !countriesSelected.includes(name) && notSelected.push(name)
   })
 
-  return countries.filter(({ name }) => notSelected.includes(name))
+  return countries
+    .filter(({ name }) => notSelected.includes(name))
+    .sort(() => 0.5 - Math.random())
 }

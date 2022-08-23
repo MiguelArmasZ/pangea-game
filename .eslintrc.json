@@ -3,6 +3,7 @@
   "rules": {
     "space-before-function-paren" : "off",
     "react-hooks/exhaustive-deps" : "off",
-    "multiline-ternary" : "off"
+    "multiline-ternary" : "off",
+    "@next/next/no-img-element" : "off"
   }
 }

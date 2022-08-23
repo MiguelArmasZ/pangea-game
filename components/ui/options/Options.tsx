@@ -1,7 +1,8 @@
-import { useMainContext } from '../../../hooks'
+import { Fragment } from 'react'
+import { useMainContext, useReply } from '../../../hooks'
+import { Country } from '../../../interfaces'
 import { Button } from '../'
 import css from './Options.module.css'
-import { Country } from '../../../interfaces'
 
 interface Props {
   availableQuestions: Country[]
@@ -12,55 +13,35 @@ export const Options = ({ availableQuestions }: Props) => {
     round,
     configGame: { modality }
   } = useMainContext()
-  const [correct] = round
-  const { capital, name: countryName } = correct
+  const [correctReply] = round
+  const { capital, name: countryName } = correctReply
 
-  function handleReply(event: any) {
-    const reply = event.target.name
-
-    if (reply === countryName) {
-      return console.log('es correcto')
-    }
-
-    if (reply !== countryName) {
-      return console.log('es INNNcorrecto')
-    }
-  }
+  const { handleReply } = useReply()
 
   return (
     <>
-      {modality === 'capitales' && (
-        <div className={css.Options}>
-          <Button onClick={handleReply} name={countryName}>
-            {capital}
-          </Button>
-          {availableQuestions
-            .map(({ capital }) => (
-              <Button
-                onClick={handleReply}
-                key={capital}
-                name={capital}
-              >
-                {capital}
-              </Button>
-            ))
-            .slice(1, 4)}
-        </div>
-      )}
-      {modality === 'banderas' && (
-        <div className={css.Options}>
-          <Button onClick={handleReply} name={countryName}>
-            {capital}
-          </Button>
-          {availableQuestions
-            .map(({ name }) => (
-              <Button onClick={handleReply} key={name} name={name}>
-                {name}
-              </Button>
-            ))
-            .slice(1, 4)}
-        </div>
-      )}
+      <div className={css.Options}>
+        <Button onClick={handleReply} name={countryName}>
+          {modality === 'capitales' && capital}
+          {modality === 'banderas' && countryName}
+        </Button>
+        {availableQuestions
+          .map(({ capital, name }) => (
+            <Fragment key={name}>
+              {modality === 'capitales' && (
+                <Button onClick={handleReply} name={capital}>
+                  {capital}
+                </Button>
+              )}
+              {modality === 'banderas' && (
+                <Button onClick={handleReply} name={name}>
+                  {name}
+                </Button>
+              )}
+            </Fragment>
+          ))
+          .slice(1, 4)}
+      </div>
     </>
   )
 }

@@ -18,3 +18,9 @@ export interface Country {
   capital: string
   flag: string
 }
+
+export interface Score {
+  correct: number
+  incorrect: number
+  remainingQuestions: number
+}
