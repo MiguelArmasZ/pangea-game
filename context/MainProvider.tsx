@@ -15,9 +15,11 @@ export const MainProvider = ({ children }: Props) => {
     CONFIG_GAME_INITIAL_STATE
   )
   const [round, setRound] = useState<Country[]>([])
+
   const [score, setScore] = useState<Score>(SCORE_INITIAL_STATE)
 
   const [feedbackReply, setFeedbackReply] = useState<0 | 1 | 2>(0)
+
   const [spinner, setSpinner] = useState<boolean>(true)
 
   return (

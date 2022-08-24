@@ -21,3 +21,31 @@
 .Table tr:last-of-type {
   border-bottom: none;
 }
+
+.Rate {
+  font-weight: bold;
+  position: relative;
+  z-index: 100;
+}
+
+.Low {
+  color: var(--error);
+}
+
+.Mid {
+  color: var(--warning);
+}
+
+.High {
+  color: var(--success);
+}
+
+.Correct {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.Inorrect {
+  color: var(--error);
+  font-weight: bold;
+}

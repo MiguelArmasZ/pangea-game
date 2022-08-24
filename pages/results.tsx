@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { ResultsLayout } from '../components/layouts'
-import { Heading, Spinner, Table } from '../components/ui'
+import { AgainBtn, Heading, Spinner, Table } from '../components/ui'
 import { useMainContext } from '../hooks'
 
 const ResultsPage = () => {
@@ -23,6 +23,7 @@ const ResultsPage = () => {
         >
           <Heading>resultados</Heading>
           <Table />
+          <AgainBtn />
         </section>
       )}
     </ResultsLayout>
