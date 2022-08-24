@@ -1,5 +1,5 @@
 .fade {
-  animation: fade 0.5s ease;
+  animation: fade 0.7s ease;
 }
 
 @keyframes fade {
@@ -11,112 +11,16 @@
   }
 }
 
-.wave-1 {
-  animation: wave-1 20s ease-in-out infinite;
-  background-color: #002a5b7c;
-  height: 20vh;
+.fadeOut {
+  animation: fade-out 0.5s ease;
+  opacity: 0;
 }
 
-@keyframes wave-1 {
-  0%,
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
   100% {
-    clip-path: polygon(
-      0% 47%,
-      10% 48%,
-      33% 54%,
-      54% 60%,
-      70% 61%,
-      84% 59%,
-      100% 52%,
-      100% 100%,
-      0% 100%
-    );
-  }
-
-  50% {
-    clip-path: polygon(
-      0% 60%,
-      15% 65%,
-      34% 66%,
-      51% 62%,
-      67% 50%,
-      84% 45%,
-      100% 46%,
-      100% 100%,
-      0% 100%
-    );
-  }
-}
-
-.wave-2 {
-  animation: wave-2 15s ease infinite;
-  background-color: #1365df40;
-  height: 40vh;
-}
-
-@keyframes wave-2 {
-  0%,
-  100% {
-    clip-path: polygon(
-      0% 47%,
-      10% 48%,
-      33% 54%,
-      54% 60%,
-      70% 61%,
-      84% 59%,
-      100% 52%,
-      100% 100%,
-      0% 100%
-    );
-  }
-
-  50% {
-    clip-path: polygon(
-      0% 60%,
-      15% 65%,
-      34% 66%,
-      51% 62%,
-      67% 50%,
-      84% 45%,
-      100% 46%,
-      100% 100%,
-      0% 100%
-    );
-  }
-}
-
-.wave-3 {
-  animation: wave-3 10s ease-in infinite;
-  background-color: #47b5ff80;
-  height: 60vh;
-}
-@keyframes wave-3 {
-  0%,
-  100% {
-    clip-path: polygon(
-      0% 47%,
-      10% 48%,
-      33% 54%,
-      54% 60%,
-      70% 61%,
-      84% 59%,
-      100% 52%,
-      100% 100%,
-      0% 100%
-    );
-  }
-
-  50% {
-    clip-path: polygon(
-      0% 60%,
-      15% 65%,
-      34% 66%,
-      51% 62%,
-      67% 50%,
-      84% 45%,
-      100% 46%,
-      100% 100%,
-      0% 100%
-    );
+    opacity: 0;
   }
 }

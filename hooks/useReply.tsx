@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { Score } from '../interfaces'
 import { useMainContext } from './useMainContext'
 
@@ -7,8 +6,6 @@ export const useReply = () => {
     useMainContext()
   const [correctReply] = round
   const { name: countryName } = correctReply
-
-  const { push } = useRouter()
 
   function handleReply(event: any) {
     const reply = event.target.name
@@ -23,10 +20,6 @@ export const useReply = () => {
           [pointKind]: score[pointKind as keyof Score] + 1
         })
         setFeedbackReply(0)
-
-        if (score.remainingQuestions === 1) {
-          push('/results')
-        }
       }, 500)
     }
 

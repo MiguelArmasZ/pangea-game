@@ -1,0 +1,10 @@
+.Heading {
+  background: var(--degrade-main);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 4rem;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}

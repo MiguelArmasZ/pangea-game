@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { HomeLayout } from '../components/layouts'
-import { BackBtn, Spinner } from '../components/ui'
+import { ResultsLayout } from '../components/layouts'
+import { Heading, Spinner, Table } from '../components/ui'
 import { useMainContext } from '../hooks'
 
 const ResultsPage = () => {
@@ -13,11 +13,19 @@ const ResultsPage = () => {
   }, [])
 
   return (
-    <HomeLayout>
-      {spinner ? <Spinner /> : <h1>soy el resultado</h1>}
-
-      <BackBtn />
-    </HomeLayout>
+    <ResultsLayout>
+      {spinner ? (
+        <Spinner />
+      ) : (
+        <section
+          style={{ display: 'grid', gap: '2rem' }}
+          className='fade'
+        >
+          <Heading>resultados</Heading>
+          <Table />
+        </section>
+      )}
+    </ResultsLayout>
   )
 }
 

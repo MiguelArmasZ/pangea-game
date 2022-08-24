@@ -3,11 +3,12 @@ import { Navbar } from '../ui'
 
 interface Props {
   children: ReactNode
+  sx?: string
 }
 
-export const PlayLayout = ({ children }: Props) => {
+export const PlayLayout = ({ children, sx = '' }: Props) => {
   return (
-    <main className='content fade'>
+    <main className={`home-layout fade ${sx}`}>
       <Navbar />
       {children}
     </main>

@@ -1,0 +1,23 @@
+.Table {
+  background-color: var(--light);
+  width: 100%;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-m);
+}
+
+.Table thead {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.Table tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--overcast);
+  padding: var(--space-1);
+}
+
+.Table tr:last-of-type {
+  border-bottom: none;
+}

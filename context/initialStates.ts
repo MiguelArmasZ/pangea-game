@@ -8,5 +8,5 @@ export const CONFIG_GAME_INITIAL_STATE: ConfigGame = {
 export const SCORE_INITIAL_STATE: Score = {
   correct: 0,
   incorrect: 0,
-  remainingQuestions: 0
+  remainingQuestions: -1
 }

@@ -33,7 +33,7 @@
   --space-6: 10rem;
 
   --shadow: 0 0 0.5rem var(--overcast);
-  --shadow-m: 0 0 1rem var(--overcast);
+  --shadow-m: 0 0 5rem var(--overcast);
   --shadow-l: 0 0 7rem var(--overcast);
 
   --degrade-main: linear-gradient(
