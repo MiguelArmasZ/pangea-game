@@ -1,28 +1,47 @@
+import { useRouter } from 'next/router'
+import { Score } from '../interfaces'
 import { useMainContext } from './useMainContext'
 
 export const useReply = () => {
-  const { round, setRound, score, setScore } = useMainContext()
-  const [correct] = round
-  const { name: countryName } = correct
+  const { round, setRound, score, setScore, setFeedbackReply } =
+    useMainContext()
+  const [correctReply] = round
+  const { name: countryName } = correctReply
 
-  const randomOrder = Math.floor(Math.random() * 100)
+  const { push } = useRouter()
 
   function handleReply(event: any) {
     const reply = event.target.name
 
-    setRound(round.slice(1, round.length))
+    const nextQuestion = () => setRound(round.slice(1, round.length))
+
+    const changeScore = (pointKind: string) => {
+      setTimeout(() => {
+        nextQuestion()
+        setScore({
+          ...score,
+          [pointKind]: score[pointKind as keyof Score] + 1
+        })
+        setFeedbackReply(0)
+
+        if (score.remainingQuestions === 1) {
+          push('/results')
+        }
+      }, 500)
+    }
 
     if (reply === countryName) {
-      return setScore({ ...score, correct: score.correct + 1 })
+      setFeedbackReply(1)
+      changeScore('correct')
     }
 
     if (reply !== countryName) {
-      return setScore({ ...score, incorrect: score.incorrect + 1 })
+      setFeedbackReply(2)
+      changeScore('incorrect')
     }
   }
 
   return {
-    randomOrder,
     handleReply
   }
 }

@@ -7,6 +7,7 @@
   border-radius: var(--radius-l);
   text-transform: uppercase;
   transition: transform 0.5s ease;
+  outline: none;
 }
 
 @media (min-width: 900px) {

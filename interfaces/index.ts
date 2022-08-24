@@ -1,5 +1,5 @@
 export type Modality = 'capitales' | 'banderas' | ''
-export type NumberQuestions = 10 | 20 | 50 | 100 | 0
+export type NumberQuestions = 3 | 10 | 20 | 50 | 100 | 0
 export type Routes = '/questions' | '/play'
 export type OptionsConfig = 'modality' | 'numberQuestions'
 export interface ConfigGame {

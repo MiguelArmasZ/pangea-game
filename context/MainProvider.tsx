@@ -17,6 +17,9 @@ export const MainProvider = ({ children }: Props) => {
   const [round, setRound] = useState<Country[]>([])
   const [score, setScore] = useState<Score>(SCORE_INITIAL_STATE)
 
+  const [feedbackReply, setFeedbackReply] = useState<0 | 1 | 2>(0)
+  const [spinner, setSpinner] = useState<boolean>(true)
+
   return (
     <MainContext.Provider
       value={{
@@ -27,7 +30,13 @@ export const MainProvider = ({ children }: Props) => {
         setRound,
 
         score,
-        setScore
+        setScore,
+
+        feedbackReply,
+        setFeedbackReply,
+
+        spinner,
+        setSpinner
       }}
     >
       {children}

@@ -10,6 +10,12 @@ interface MainContextTypes {
 
   score: Score
   setScore: (value: Score) => void
+
+  feedbackReply: 0 | 1 | 2
+  setFeedbackReply: (value: 0 | 1 | 2) => void
+
+  spinner: boolean
+  setSpinner: (value: boolean) => void
 }
 
 export const MainContext = createContext({} as MainContextTypes)

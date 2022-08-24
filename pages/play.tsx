@@ -1,21 +1,26 @@
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { PlayLayout } from '../components/layouts'
 import { BackBtn, Options, Paragraph, Score } from '../components/ui'
 import { getNotSelected } from '../helpers'
 import { useMainContext } from '../hooks'
+import { Country } from '../interfaces'
 
 const PlayPage = () => {
+  const [availableQuestions, setAvailableQuestions] = useState<
+    Country[]
+  >([])
   const {
     round,
     configGame: { modality },
     score,
-    setScore
+    setScore,
+    feedbackReply
   } = useMainContext()
   const [question] = round
-  const availableQuestions = getNotSelected(round)
 
   useEffect(() => {
+    setAvailableQuestions(getNotSelected(round))
     setScore({ ...score, remainingQuestions: round.length - 1 })
   }, [round])
 
@@ -24,7 +29,7 @@ const PlayPage = () => {
       <Score />
       {modality === 'capitales' && (
         <>
-          <Paragraph>
+          <Paragraph sx={feedbackReply === 0 ? 'fade' : ''}>
             ¿cúal es la capital de <strong>{question.name}</strong>?
           </Paragraph>
           <Options availableQuestions={availableQuestions} />
@@ -32,7 +37,9 @@ const PlayPage = () => {
       )}
       {modality === 'banderas' && (
         <>
-          <Paragraph>¿a qué país pertenece esta bandera?</Paragraph>
+          <Paragraph sx={feedbackReply === 0 ? 'fade' : ''}>
+            ¿a qué país pertenece esta bandera?
+          </Paragraph>
           <Image
             src={`/flags/${question.flag}.png`}
             width={70}

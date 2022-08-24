@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { Fragment } from 'react'
 import { useMainContext, useReply } from '../../../hooks'
 import { Country } from '../../../interfaces'
@@ -11,7 +12,8 @@ interface Props {
 export const Options = ({ availableQuestions }: Props) => {
   const {
     round,
-    configGame: { modality }
+    configGame: { modality },
+    feedbackReply
   } = useMainContext()
   const [correctReply] = round
   const { capital, name: countryName } = correctReply
@@ -20,25 +22,29 @@ export const Options = ({ availableQuestions }: Props) => {
 
   return (
     <>
-      <div className={css.Options}>
-        <Button onClick={handleReply} name={countryName}>
+      <div
+        className={`${css.Options} ${
+          feedbackReply === 0 ? 'fade' : ''
+        }`}
+      >
+        <Button
+          sx={feedbackReply > 0 ? css.Correct : ''}
+          onClick={handleReply}
+          name={countryName}
+        >
           {modality === 'capitales' && capital}
           {modality === 'banderas' && countryName}
         </Button>
         {availableQuestions
           .map(({ capital, name }) => (
-            <Fragment key={name}>
-              {modality === 'capitales' && (
-                <Button onClick={handleReply} name={capital}>
-                  {capital}
-                </Button>
-              )}
-              {modality === 'banderas' && (
-                <Button onClick={handleReply} name={name}>
-                  {name}
-                </Button>
-              )}
-            </Fragment>
+            <Button
+              key={name}
+              sx={feedbackReply === 2 ? css.Incorrect : ''}
+              onClick={handleReply}
+              name={modality === 'capitales' ? capital : name}
+            >
+              {modality === 'capitales' ? capital : name}
+            </Button>
           ))
           .slice(1, 4)}
       </div>
