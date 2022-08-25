@@ -1,16 +1,23 @@
-import { useEffect } from 'react'
+import Image from 'next/image'
 import { ResultsLayout } from '../components/layouts'
-import { AgainBtn, Heading, Spinner, Table } from '../components/ui'
-import { useMainContext } from '../hooks'
+import {
+  AgainBtn,
+  Heading,
+  Spinner,
+  Table,
+  Paragraph
+} from '../components/ui'
+import {
+  useMainContext,
+  useMsgResult,
+  useProtectRoutes
+} from '../hooks'
+import css from '../styles/pages/Results.module.css'
 
 const ResultsPage = () => {
-  const { spinner, setSpinner } = useMainContext()
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSpinner(false)
-    }, 2000)
-  }, [])
+  const { spinner, emojiResult } = useMainContext()
+  const { message } = useMsgResult()
+  useProtectRoutes()
 
   return (
     <ResultsLayout>
@@ -18,11 +25,18 @@ const ResultsPage = () => {
         <Spinner />
       ) : (
         <section
-          style={{ display: 'grid', gap: '2rem' }}
+          style={{ display: 'grid', gap: '2.5rem' }}
           className='fade'
         >
           <Heading>resultados</Heading>
           <Table />
+          <Paragraph sx={css.Msg}>{message}</Paragraph>
+          <Image
+            src={`/emojis/${emojiResult}.png`}
+            alt='emoji'
+            width={50}
+            height={50}
+          />
           <AgainBtn />
         </section>
       )}

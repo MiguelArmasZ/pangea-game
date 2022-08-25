@@ -22,6 +22,8 @@ export const MainProvider = ({ children }: Props) => {
 
   const [spinner, setSpinner] = useState<boolean>(true)
 
+  const [emojiResult, setEmojiResult] = useState<string>('')
+
   return (
     <MainContext.Provider
       value={{
@@ -38,7 +40,10 @@ export const MainProvider = ({ children }: Props) => {
         setFeedbackReply,
 
         spinner,
-        setSpinner
+        setSpinner,
+
+        emojiResult,
+        setEmojiResult
       }}
     >
       {children}

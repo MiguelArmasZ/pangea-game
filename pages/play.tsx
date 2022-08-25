@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import { PlayLayout } from '../components/layouts'
 import { BackBtn, Options, Paragraph, Score } from '../components/ui'
-import { useGameFlow, useMainContext } from '../hooks'
+import {
+  useGameFlow,
+  useMainContext,
+  useProtectRoutes
+} from '../hooks'
 
 const PlayPage = () => {
   const {
@@ -11,8 +15,8 @@ const PlayPage = () => {
     score
   } = useMainContext()
   const [question] = round
-
   const { availableQuestions } = useGameFlow()
+  useProtectRoutes()
 
   return (
     <PlayLayout sx={score.remainingQuestions === 0 ? 'fadeOut' : ''}>

@@ -1,0 +1,5 @@
+.Msg {
+  max-width: 20ch;
+  margin: 0 auto;
+  font-family: var(--deco);
+}

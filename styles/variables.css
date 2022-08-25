@@ -47,6 +47,7 @@
     var(--black),
     var(--overcast)
   );
+  --degrade-white: linear-gradient(-45deg, var(--white), var(--gray));
 }
 
 /* 

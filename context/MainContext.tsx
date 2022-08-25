@@ -16,6 +16,9 @@ interface MainContextTypes {
 
   spinner: boolean
   setSpinner: (value: boolean) => void
+
+  emojiResult: string
+  setEmojiResult: (value: string) => void
 }
 
 export const MainContext = createContext({} as MainContextTypes)

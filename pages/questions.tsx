@@ -1,10 +1,11 @@
 import { PlayLayout } from '../components/layouts'
 import { BackBtn, Keypad, Paragraph } from '../components/ui'
 import { numberQuestionsConfig } from '../data'
-import { useRandomCountries } from '../hooks'
+import { useProtectRoutes, useRandomCountries } from '../hooks'
 
 const QuestionsPage = () => {
   useRandomCountries()
+  useProtectRoutes()
 
   return (
     <PlayLayout>
