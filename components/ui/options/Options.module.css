@@ -7,11 +7,13 @@
 }
 
 .Correct {
-  box-shadow: 0 0 1rem var(--success);
   border-color: var(--success);
+  background-color: var(--success-light);
+  color: var(--white);
 }
 
 .Incorrect {
-  box-shadow: 0 0 1rem var(--error);
   border-color: var(--error);
+  background-color: var(--error-light);
+  color: var(--white);
 }

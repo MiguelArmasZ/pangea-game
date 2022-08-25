@@ -6,7 +6,7 @@
   width: 100%;
   border-radius: var(--radius-l);
   text-transform: uppercase;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   outline: none;
 }
 

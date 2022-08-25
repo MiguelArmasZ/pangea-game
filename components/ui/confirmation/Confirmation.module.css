@@ -1,0 +1,36 @@
+.Modal {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), var(--dark));
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Wrap {
+  background-color: var(--light);
+  padding: var(--space-2) var(--space-2);
+  border-radius: var(--radius-m);
+  display: grid;
+  gap: var(--space-3);
+  max-width: 50rem;
+}
+
+.Keypad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.Continue {
+  /* background-color: var(--error-light); */
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.Message {
+  text-align: center;
+}

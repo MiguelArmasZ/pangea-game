@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import { PlayLayout } from '../components/layouts'
-import { BackBtn, Options, Paragraph, Score } from '../components/ui'
+import {
+  BackBtn,
+  Confirmation,
+  Options,
+  Paragraph,
+  Score
+} from '../components/ui'
 import {
   useGameFlow,
   useMainContext,
@@ -12,18 +18,21 @@ const PlayPage = () => {
     round,
     configGame: { modality },
     feedbackReply,
-    score
+    score,
+    confirmation: { isActive }
   } = useMainContext()
   const [question] = round
   const { availableQuestions } = useGameFlow()
   useProtectRoutes()
+
+  const feedbackAnimation = feedbackReply === 0 ? 'fade' : ''
 
   return (
     <PlayLayout sx={score.remainingQuestions === 0 ? 'fadeOut' : ''}>
       <Score />
       {modality === 'capitales' && (
         <>
-          <Paragraph sx={feedbackReply === 0 ? 'fade' : ''}>
+          <Paragraph sx={feedbackAnimation}>
             ¿cúal es la capital de <strong>{question.name}</strong>?
           </Paragraph>
           <Options availableQuestions={availableQuestions} />
@@ -31,7 +40,7 @@ const PlayPage = () => {
       )}
       {modality === 'banderas' && (
         <>
-          <Paragraph sx={feedbackReply === 0 ? 'fade' : ''}>
+          <Paragraph sx={feedbackAnimation}>
             ¿a qué país pertenece esta bandera?
           </Paragraph>
           <Image
@@ -43,7 +52,8 @@ const PlayPage = () => {
           <Options availableQuestions={availableQuestions} />
         </>
       )}
-      <BackBtn />
+      {isActive && <Confirmation />}
+      {!isActive && <BackBtn typeBtn='backAndDelete' />}
     </PlayLayout>
   )
 }

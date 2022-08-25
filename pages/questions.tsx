@@ -11,7 +11,7 @@ const QuestionsPage = () => {
     <PlayLayout>
       <Paragraph>elíge el número de preguntas</Paragraph>
       <Keypad buttons={numberQuestionsConfig} />
-      <BackBtn />
+      <BackBtn typeBtn='back' />
     </PlayLayout>
   )
 }

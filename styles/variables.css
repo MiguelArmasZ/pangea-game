@@ -20,6 +20,9 @@
   --warning: #bec02c;
   --error: #990000;
 
+  --success-light: #3c9185;
+  --error-light: #f79595;
+
   --radius: 0.5rem;
   --radius-m: 1rem;
   --radius-l: 2rem;

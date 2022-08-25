@@ -1,5 +1,10 @@
 import { createContext } from 'react'
-import { ConfigGame, Country, Score } from '../interfaces'
+import {
+  ConfigGame,
+  Country,
+  Score,
+  Confirmation
+} from '../interfaces'
 
 interface MainContextTypes {
   configGame: ConfigGame
@@ -19,6 +24,9 @@ interface MainContextTypes {
 
   emojiResult: string
   setEmojiResult: (value: string) => void
+
+  confirmation: Confirmation
+  setConfirmation: (value: Confirmation) => void
 }
 
 export const MainContext = createContext({} as MainContextTypes)

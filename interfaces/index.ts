@@ -24,3 +24,8 @@ export interface Score {
   incorrect: number
   remainingQuestions: number
 }
+
+export interface Confirmation {
+  isActive: boolean
+  message: string
+}

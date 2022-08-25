@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import { Fragment } from 'react'
 import { useMainContext, useReply } from '../../../hooks'
 import { Country } from '../../../interfaces'

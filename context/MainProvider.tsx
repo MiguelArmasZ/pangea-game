@@ -1,9 +1,15 @@
 import { ReactNode, useState } from 'react'
-import { ConfigGame, Country, Score } from '../interfaces'
+import {
+  ConfigGame,
+  Country,
+  Score,
+  Confirmation
+} from '../interfaces'
 import {
   MainContext,
   CONFIG_GAME_INITIAL_STATE,
-  SCORE_INITIAL_STATE
+  SCORE_INITIAL_STATE,
+  CONFIRMATION_INITIAL_STATE
 } from './'
 
 interface Props {
@@ -24,6 +30,10 @@ export const MainProvider = ({ children }: Props) => {
 
   const [emojiResult, setEmojiResult] = useState<string>('')
 
+  const [confirmation, setConfirmation] = useState<Confirmation>(
+    CONFIRMATION_INITIAL_STATE
+  )
+
   return (
     <MainContext.Provider
       value={{
@@ -43,7 +53,10 @@ export const MainProvider = ({ children }: Props) => {
         setSpinner,
 
         emojiResult,
-        setEmojiResult
+        setEmojiResult,
+
+        confirmation,
+        setConfirmation
       }}
     >
       {children}
