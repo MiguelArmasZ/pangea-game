@@ -28,7 +28,7 @@ export const Table = () => {
         <tr>
           <th>ratio de aciertos</th>
           <td className={`${css.Rate} ${level}`}>
-            {rate.toFixed(2)}%
+            {rate.toFixed(0)}%
           </td>
         </tr>
       </thead>
