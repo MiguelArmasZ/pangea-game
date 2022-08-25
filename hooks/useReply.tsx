@@ -20,7 +20,7 @@ export const useReply = () => {
           [pointKind]: score[pointKind as keyof Score] + 1
         })
         setFeedbackReply(0)
-      }, 500)
+      }, 2000)
     }
 
     if (reply === countryName) {
