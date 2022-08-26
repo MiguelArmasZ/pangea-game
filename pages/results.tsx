@@ -32,6 +32,7 @@ const ResultsPage = () => {
           <Table />
           <Paragraph sx={css.Msg}>{message}</Paragraph>
           <Image
+            priority
             src={`/emojis/${emojiResult}.png`}
             alt='emoji'
             width={50}
