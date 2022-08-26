@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { PlayLayout } from '../components/layouts'
 import {
   BackBtn,
@@ -44,8 +43,7 @@ const PlayPage = () => {
             ¿a qué país pertenece esta bandera?
           </Paragraph>
           <span className={feedbackReply === 0 ? 'fade-large' : ''}>
-            <Image
-              priority
+            <img
               src={`/flags/${question.flag}.png`}
               width={70}
               height={70}
