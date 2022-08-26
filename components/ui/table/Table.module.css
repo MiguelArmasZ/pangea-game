@@ -7,11 +7,6 @@
   margin: 0 auto;
 }
 
-.Table thead {
-  display: grid;
-  gap: var(--space-1);
-}
-
 .Table tr {
   display: flex;
   align-items: center;

@@ -3,7 +3,7 @@ import css from './Table.module.css'
 
 export const Table = () => {
   const {
-    configGame: { numberQuestions },
+    configGame: { modality, numberQuestions },
     score: { correct, incorrect }
   } = useMainContext()
 
@@ -16,6 +16,10 @@ export const Table = () => {
         <tr>
           <th>número de preguntas</th>
           <td>{numberQuestions}</td>
+        </tr>
+        <tr>
+          <th>modalidad</th>
+          <td>{modality}</td>
         </tr>
         <tr>
           <th>aciertos</th>
