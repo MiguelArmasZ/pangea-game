@@ -11,6 +11,7 @@ export const Developed = () => {
     >
       <p className={css.Text}>developed by</p>
       <Image
+        priority
         src='/mark/logo.png'
         width={40}
         height={40}

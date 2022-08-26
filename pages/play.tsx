@@ -44,6 +44,7 @@ const PlayPage = () => {
             ¿a qué país pertenece esta bandera?
           </Paragraph>
           <Image
+            priority
             src={`/flags/${question.flag}.png`}
             width={70}
             height={70}
