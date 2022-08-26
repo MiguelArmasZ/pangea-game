@@ -23,7 +23,7 @@ export const Options = ({ availableQuestions }: Props) => {
     <>
       <div
         className={`${css.Options} ${
-          feedbackReply === 0 ? 'fade' : ''
+          feedbackReply === 0 ? 'fade-large' : ''
         }`}
       >
         <Button
@@ -38,7 +38,9 @@ export const Options = ({ availableQuestions }: Props) => {
           .map(({ capital, name }) => (
             <Button
               key={name}
-              sx={feedbackReply === 2 ? css.Incorrect : ''}
+              sx={`${css.IncorrectOptions} ${
+                feedbackReply === 2 ? css.Incorrect : ''
+              }`}
               onClick={handleReply}
               name={modality === 'capitales' ? capital : name}
             >

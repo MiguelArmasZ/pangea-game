@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Score } from '../interfaces'
 import { useMainContext } from './useMainContext'
 
@@ -33,6 +34,16 @@ export const useReply = () => {
       changeScore('incorrect')
     }
   }
+
+  useEffect(() => {
+    const playKeypad = document.querySelectorAll(
+      '.Button_Button__N0SJa'
+    )
+
+    playKeypad.forEach((btn: any) => {
+      btn.style.order = Math.floor(Math.random() * 100)
+    })
+  }, [round])
 
   return {
     handleReply

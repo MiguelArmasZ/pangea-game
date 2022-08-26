@@ -1,14 +1,36 @@
-# task
+# PangeaGame
 
-1.  seo
-       <!-- 2. proteger rutas 3. añadir decoración en la home -->
-       <!-- 2. arreglar score en desktop -->
-    <!-- 2. reusltados en desktop -->
-       <!-- 2. agregar feedback al final en los resultados dependiendo de la puntuación -->
-    <!-- 2. proteger rutas -->
-       <!-- 6. capitalizar el pais por el que se pregunta -->
-       <!-- 6. aumentar el tiempo que dura el feedback de la respuesta -->
-       <!-- 7. refactorizar a customhooks la pagina de play -->
-2.  aleatoriadad en el orden de botones de las opciones
-    <!-- 3.  borrar el estado si el usuario empieza el juego y decide salirse -->
-    <!-- 4.  aregar confirmación para borrar el estado una vez ha iniciado el juego -->
+Una aplicación para aprender geografía jugando.
+
+## Stack
+
+- El framework de React, Next.JS
+- Para los estilos usa CSS Modules
+- TypeScript
+- Para el manejo del estado global se uso el Context API
+
+### Otras dependencias
+
+- Canvas confetti (para el efecto de confetti en la sección de resultados)
+- El estilo standard para la configuración de eslint
+
+## Correr localmente
+
+1.  Clonar el repositorio
+2.  Instalar las dependencias con tu gestor de paquetes
+3.  Ejecutar el comando `npm run dev` para levantar el servidor de desarrollo.
+4.  Para crear el build de producción ejecutar `npm run build`
+5.  Para levantar el servidor de producción ejecutar `npm start`
+
+## Despliegue
+
+Para desplegar este proyecto se usó el servicio de netlify.
+
+Puedes acceder al proyecto ya en producción aquí 👉
+[PangeaGame](https://pangeagame.net/)
+
+## Enfoque de desarrollo
+
+Cada sección del juego es una ruta protegida, para que el usuario no pueda acceder si previamente no hay una configuración del juego establecida.
+
+Se utilizó el _Context API_ para el manejo del estado glbal.
