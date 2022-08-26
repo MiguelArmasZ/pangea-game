@@ -16,11 +16,6 @@ export const modalityConfig: ConfigGameBtn[] = [
 export const numberQuestionsConfig: ConfigGameBtn[] = [
   {
     href: '/play',
-    text: 3,
-    optionConfig: 'numberQuestions'
-  },
-  {
-    href: '/play',
     text: 10,
     optionConfig: 'numberQuestions'
   },
