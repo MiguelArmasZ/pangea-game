@@ -43,13 +43,15 @@ const PlayPage = () => {
           <Paragraph sx={feedbackAnimation}>
             ¿a qué país pertenece esta bandera?
           </Paragraph>
-          <Image
-            priority
-            src={`/flags/${question.flag}.png`}
-            width={70}
-            height={70}
-            alt='bandera'
-          />
+          <span className={feedbackReply === 0 ? 'fade-large' : ''}>
+            <Image
+              priority
+              src={`/flags/${question.flag}.png`}
+              width={70}
+              height={70}
+              alt='bandera'
+            />
+          </span>
           <Options availableQuestions={availableQuestions} />
         </>
       )}

@@ -19,7 +19,7 @@ export const Confirmation = () => {
   }
 
   return (
-    <div className={`${css.Modal} fade `}>
+    <div className={`${css.Modal} fade-short `}>
       <section className={`${css.Wrap} content  move-down`}>
         <h3 className={css.Message}>
           perderás todo el progreso de esta partida...
